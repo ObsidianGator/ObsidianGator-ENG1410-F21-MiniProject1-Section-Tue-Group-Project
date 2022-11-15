@@ -15,11 +15,13 @@ void encrypt(char argv[]){
         fgets(read, 255, (FILE*)fp_in);
         for(int j=0, i = 0; j<=255; j++){
             if(read[j]==0){
+                write[i] = '\0';
                 file_end = 1;
                 break; 
             }
             else if(read[j]==13||read[j]=='\n'){
                 write[i] = read[j];
+                write[i+1] = '\0';
                 i++;
                 break;
             }
@@ -57,11 +59,13 @@ void decrypt(char argv[]){
         fgets(read, 255, (FILE*)fp_in);
         for(int j=0, i = 0; j<=255; j++){
             if(read[j]==0){
+                write[i] = '\0';
                 file_end = 1;
                 break; 
             }
             else if(read[j]==13||read[j]=='\n'){
                 write[i] = read[j];
+                write[i+1] = '\0';
                 i++;
                 break;
             }
